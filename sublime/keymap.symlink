@@ -1,0 +1,177 @@
+[
+    //  SNIPPETS //
+    // console logs - javascript
+    {
+        "keys": ["super+shift+l"], "command": "insert_snippet",
+        "args": { "contents": "console.log('-----${1:}$SELECTION-----');${0}" }
+    },
+    {
+        "keys": ["super+alt+l"], "command": "insert_snippet",
+        "args": { "contents": "console.log(`-----${1:}$SELECTION-----\\n`, ${1:}$SELECTION);${0}"}
+    },
+
+    // console log - python
+    {
+        "keys": ["super+alt+l"], "command": "insert_snippet",
+        "args": { "contents": "print('-----${1:}$SELECTION-----', ${1:}$SELECTION);${0}"},
+        "context": [{ "key": "selector", "operator": "equal", "operand": "source.python" }]
+    },
+
+    // TEXT MANIPULATION //
+    { "keys": ["alt+up"], "command": "swap_line_up" },
+    { "keys": ["alt+down"], "command": "swap_line_down" },
+    { "keys": ["shift+alt+d"], "command": "find_under_expand" },
+
+    // TEXT NAVIGATION //
+    {"keys": ["alt+,"], "command": "scroll_lines", "args": {"amount": 15.0 }},
+    {"keys": ["alt+."], "command": "scroll_lines", "args": {"amount": -15.0 }},
+    { "keys": ["shift+alt+."], "command": "jump_next_indent" },
+    { "keys": ["shift+alt+,"], "command": "jump_prev_indent" },
+    {"keys": ["super+alt+j"], "command": "goto_definition" },
+    { "keys": ["alt+m"], "command": "jump_back" },
+    { "keys": ["alt+shift+m"], "command": "jump_forward" },
+    { "keys": ["super+d"], "command": "find_under_expand" },
+
+    // TAB MANAGEMENT
+    { "keys": ["ctrl+u"], "command": "move_tab", "args": {"position": "0"}},
+    { "keys": ["ctrl+i"], "command": "move_tab", "args": {"position": "-1"}},
+    { "keys": ["ctrl+o"], "command": "move_tab", "args": {"position": "+1"}},
+    { "keys": ["super+shift+t"], "command": "reopen_last_file" },
+
+    // PROJECT MANAGEMENT //
+    { "keys": ["ctrl+alt+p"], "command": "save_project_and_workspace_as" },
+
+    // UI RELATED //
+    // sidebar - toggle and navigation
+    { "keys": ["super+b"], "command": "toggle_side_bar"},
+    { "keys": ["h"], "command": "move", "args": {"by": "characters", "forward": false}, "context": [ {"key": "control", "operand": "sidebar_tree"} ] },
+    { "keys": ["j"], "command": "move", "args": {"by": "lines", "forward": true}, "context": [ {"key": "control", "operand": "sidebar_tree"} ] },
+    { "keys": ["k"], "command": "move", "args": {"by": "lines", "forward": false}, "context": [ {"key": "control", "operand": "sidebar_tree"} ] },
+    { "keys": ["l"], "command": "move", "args": {"by": "characters", "forward": true}, "context": [ {"key": "control", "operand": "sidebar_tree"} ] },
+    { "keys": ["alt+'"], "command": "chain", "args": { "commands": [ ["reveal_in_side_bar"], ["focus_side_bar"]] } }, // chain of command dependent
+
+    // BOOKMARKS / MARKS //
+    { "keys": ["ctrl+m"], "command": "toggle_bookmark" },
+    { "keys": ["ctrl+,"], "command": "prev_bookmark" },
+    { "keys": ["ctrl+."], "command": "next_bookmark" },
+    { "keys": ["ctrl+shift+m"], "command": "clear_bookmarks" },
+    // { "keys": ["ctrl+/"], "command": "select_all_bookmarks" },
+    // { "keys": ["ctrl+v"], "command": "toggle_bookmark" },
+    // { "keys": ["super+k", "super+g"], "command": "clear_bookmarks", "args": {"name": "mark"} },
+
+    { "keys": ["ctrl+m"], "command": "set_mark" },
+    { "keys": ["ctrl+]"], "command": "move_to", "args": {"to": "brackets", "forward": true} },
+    { "keys": ["super+k", "super+a"], "command": "select_to_mark" },
+    { "keys": ["super+k", "super+w"], "command": "delete_to_mark" },
+    { "keys": ["super+k", "super+g"], "command": "clear_bookmarks", "args": {"name": "mark"} },
+    // { "keys": ["ctrl+k", "ctrl+m"], "command": "swap_with_mark" },
+
+    // PLUGIN DEPENDENT //
+    // file navigation: "SublimeFiles - https://github.com/al63/SublimeFiles"
+    { "keys": ["alt+/"], "command": "sublime_files", "args": { "command": "navigate" }},
+    { "keys": ["ctrl+enter"], "command": "sublime_files", "args": { "command": "navigate" }},
+
+    // file shortcut management: "FavoriteFiles - https://github.com/facelessuser/FavoriteFiles"
+    { "keys": ["super+alt+o"], "command": "favorite_files_open" },
+    { "keys": ["super+alt+p"], "command": "favorite_files_add" },
+    { "keys": ["super+alt+i"], "command": "favorite_files_remove" },
+
+    // text selection: "ExpandRegion - https://github.com/aronwoost/sublime-expand-region"
+    { "keys": ["super+l"], "command": "expand_region" },
+    { "keys": ["super+o"], "command": "expand_region", "args": { "undo": true} },
+
+    // window pane management: "PanePane - https://github.com/mjsmith1028/PanePane"
+    { "keys": ["ctrl+shift+h"], "command": "carry_file_to_pane", "args": {"direction": "left"} },
+    { "keys": ["ctrl+shift+k"], "command": "carry_file_to_pane", "args": {"direction": "up"} },
+    { "keys": ["ctrl+shift+j"], "command": "carry_file_to_pane", "args": {"direction": "down"} },
+    { "keys": ["ctrl+shift+l"], "command": "carry_file_to_pane", "args": {"direction": "right"} },
+    { "keys": ["ctrl+h"], "command": "travel_to_pane", "args": {"direction": "left"} },
+    { "keys": ["ctrl+k"], "command": "travel_to_pane", "args": {"direction": "up"} },
+    { "keys": ["ctrl+j"], "command": "travel_to_pane", "args": {"direction": "down"} },
+    { "keys": ["ctrl+l"], "command": "travel_to_pane", "args": {"direction": "right"} },
+    { "keys": ["ctrl+w"], "command": "destroy_pane", "args": {"direction": "self" }},
+    { "keys": ["alt+ctrl+h"], "command": "carry_file_to_pane", "args": {"direction": "left"} },
+    { "keys": ["alt+ctrl+k"], "command": "carry_file_to_pane", "args": {"direction": "up"} },
+    { "keys": ["alt+ctrl+j"], "command": "carry_file_to_pane", "args": {"direction": "down"} },
+    { "keys": ["alt+ctrl+l"], "command": "carry_file_to_pane", "args": {"direction": "right"} },
+    // { "keys": ["super+shift+,"], "command": "pane_pane_resize", "args": {"dimension": "height", "resize": "decrease" } },
+    { "keys": ["ctrl+p"], "command": "toggle_zoom_pane", "args":{"fraction": 0.9} },
+
+    // git: "Git - https://github.com/kemayo/sublime-text-git"
+    { "keys": ["ctrl+'"], "command": "git_diff_all" },
+
+    // SETTING RELATED //
+    // keybindings file shortcut
+    { "keys": ["super+shift+,"], "command": "edit_settings", "args": {"base_file": "${packages}/Default/Default ($platform).sublime-keymap", "default": "[\n\t$0\n]\n"} },
+
+    // VINTAGE SPECIFIC MAPPINGS //
+    // text manipulation
+    { "context":[{ "key": "setting.command_mode" }], "keys": ["tab"], "command": "indent" },
+    { "context":[{ "key": "setting.command_mode" }], "keys": ["/"], "command": "toggle_comment" },
+
+    // text navigation
+    { "context":[{ "key": "setting.command_mode" }], "keys": ["K"], "command": "move", "args": {"by": "lines", "forward": false } },
+    { "context":[{ "key": "setting.command_mode" }], "keys": ["right"], "command": "set_motion", "args": {"motion": "move_to", "motion_args": { "to": "eol", "extend": true, "forward": true } } },
+    { "context":[{ "key": "setting.command_mode" }], "keys": ["left"], "command": "set_motion", "args": {"motion": "move_to", "motion_args": { "to": "bol", "extend": true, "forward": false } } },
+    { "context":[{ "key": "setting.command_mode" }], "keys": ["up"], "command": "scroll_lines", "args": {"amount": 15.0 }},
+    { "context":[{ "key": "setting.command_mode" }], "keys": ["down"], "command": "scroll_lines", "args": {"amount": -15.0 }},
+    { "context":[{ "key": "setting.command_mode" }], "keys": [" "], "command": "scroll_lines", "args": {"amount": -15.0 }},
+    { "context":[{ "key": "setting.command_mode" }], "keys": ["shift+space"], "command": "scroll_lines", "args": {"amount": 15.0 }},
+
+    // file navigation
+    { "context":[{ "key": "setting.command_mode" }], "keys": [",", "g"], "command": "reveal_in_side_bar_and_focus" },
+    { "context":[{ "key": "setting.command_mode" }], "keys": [",", "e"], "command": "show_overlay", "args": {"overlay": "goto", "show_files": true} },
+
+    // CONVENIENCE
+    { "context":[{ "key": "setting.command_mode" }], "keys": ["enter"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Add Line.sublime-macro"} },
+
+    // comma prefaced
+    { "context":[{ "key": "setting.command_mode" }], "keys": [",", "X"], "command": "close_all" },
+    { "context":[{ "key": "setting.command_mode" }], "keys": [",", "P"], "command": "prompt_select_workspace" },
+    { "context":[{ "key": "setting.command_mode" }], "keys": [",", "q"], "command": "prompt_select_workspace" },
+    { "context":[{ "key": "setting.command_mode" }], "keys": [",", "Q"], "command": "save_project_and_workspace_as" },
+    { "context":[{ "key": "setting.command_mode" }], "keys": [",", "I"], "command": "close_workspace" },
+    { "context":[{ "key": "setting.command_mode" }], "keys": [",", "c"], "command": "toggle_comment" },
+    { "context":[{ "key": "setting.command_mode" }], "keys": [",", "f"], "command": "find_under_expand" },
+    { "context":[{ "key": "setting.command_mode" }], "keys": [",", "g"], "command": "find_all_under" },
+    { "context":[{ "key": "setting.command_mode" }], "keys": [",", ","], "command": "next_view_in_stack" },
+    { "context":[{ "key": "setting.command_mode" }], "keys": [",", "."], "command": "show_overlay", "args": {"overlay": "command_palette"} },
+
+    // bookmarks
+    { "context": [{"key": "setting.command_mode"}], "keys": ["m"], "command": "toggle_bookmark"  },
+    { "context": [{"key": "setting.command_mode"}], "keys": ["["], "command": "next_bookmark"  },
+    { "context": [{"key": "setting.command_mode"}], "keys": ["]"], "command": "prev_bookmark"  },
+    { "context": [{"key": "setting.command_mode"}], "keys": [";"], "command": "expand_region"  },
+
+    // exit insert mode upon saving the file
+    { "context":[{ "key": "setting.command_mode", "operand": false }], "keys": ["super+s"], "command": "chain", "args": { "commands": [ ["save"], ["exit_insert_mode"]]}},
+    // make sure escape always exits insert mode
+    { "keys": ["escape"], "command": "chain", "args": { "commands": [ [ "hide_auto_complete"], ["exit_insert_mode"] ]}, "context": [{ "key": "auto_complete_visible", "operator": "equal", "operand": true } ] },
+
+    // PLUGIN DEPENDENT
+    // text navigation and selection: "AceJump - https://github.com/ice9js/ace-jump-sublime"
+    { "context":[{ "key": "setting.command_mode" }], "keys": ["f"], "command": "ace_jump_within_line" },
+    { "context":[{ "key": "setting.command_mode" }], "keys": ["F"], "command": "ace_jump_backwards" },
+    { "context":[{ "key": "setting.command_mode" }], "keys": ["alt+;"], "command": "ace_jump_line" },
+    { "keys": ["ctrl+f"], "command": "chain", "args": { "commands": [ ["ace_jump_select"], ["ace_jump_within_line"]] } },
+    { "keys": ["ctrl+F"], "command": "chain", "args": { "commands": [ ["ace_jump_select"], ["ace_jump_backwards"]] } },
+    { "keys": ["shift+alt+;"], "command": "chain", "args": { "commands": [ ["ace_jump_select"], ["ace_jump_line"]] } },
+
+    // file shortcut management: "FavoriteFiles - https://github.com/facelessuser/FavoriteFiles"
+    { "context":[{ "key": "setting.command_mode" }], "keys": [",", "s"], "command": "favorite_files_add" }, //pneumonic: save
+    { "context":[{ "key": "setting.command_mode" }], "keys": [",", "a"], "command": "favorite_files_open" }, //pneumonic: access
+
+    // git
+    { "context":[{ "key": "setting.command_mode" }], "keys": [",", "l"], "command": "git_log" },
+    { "context":[{ "key": "setting.command_mode" }], "keys": [",", "d"], "command": "git_diff" },
+
+    // terminal
+    { "context":[{ "key": "setting.command_mode" }], "keys": [",", "T"], "command": "open_terminal" },
+]
+
+
+/*
+NOTE: Any keybindings with the command "chain" are dependent on the plugin "ChainOfCommand - https://github.com/jisaacks/ChainOfCommand"
+
+TIP: To see what any command is being executed, input this into the Sublime console: "sublime.log_commands(True)"
+*/

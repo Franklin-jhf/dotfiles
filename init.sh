@@ -1,6 +1,6 @@
 #!/bin/bash
 
-base=~/.dotfiles
+base=~/.my-dotfiles
 
 function link {
     src=$base/$1
@@ -29,21 +29,12 @@ function env_setup {
     link vim/vim.symlink
     link vim/vimrc.symlink
     link zsh/zshrc.symlink
-    link docker/docker.symlink
+    # link docker/docker.symlink
 
-    if [ `uname` = 'Darwin' ]
-    then
-        link tmux/tmux.symlink
-        link tmux/tmux.conf.symlink
-        link hyper/hyper.js.symlink
-    fi
-
-    mkdir -p ~/.config/nvim
-    ln -sFv ~/.vimrc ~/.config/nvim/init.vim
-    ln -sFv ~/.vim/autoload ~/.config/nvim
-    ln -sFv ~/.vim/ftplugin ~/.config/nvim
-
-    touch ~/.simplenoterc
+    ln -sFv ~/.my-dotfiles/sublime/keymap.symlink /Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Default\ (OSX).sublime-keymap
+    # mkdir -p ~/.config/nvim
+    # ln -sFv ~/.vimrc ~/.config/nvim/init.vim
+    # ln -sFv ~/.vim/autoload ~/.config/nvim
 }
 
 env_setup
