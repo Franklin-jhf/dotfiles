@@ -1,6 +1,6 @@
-# Andre's dotfiles
+# Franklin's dotfiles
 
-My personal dotfiles.
+My configs for things.
 
 ## Usage
 
